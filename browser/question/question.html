@@ -1,0 +1,15 @@
+<div>
+
+	<form name='form' class='form-group'>
+		<label for='content'> Question content </label>
+		<input id='content' ng-model='newquestion.content' class='form-control'>
+		<label for='respondent'> This question is for </label>		
+		<input id='respondent' ng-model='newquestion.respondent' class='form-control'>
+		<button ng-click='save()' class='btn btn-danger'>submit this question!</button>
+	</form>
+
+	<div ng-repeat='question in questions' class = 'container well'>
+		This is a question for <strong><a ui-sref='respondent({respondent:question.respondent})'>{{question.respondent}}</a></strong> : {{question.content}}
+	</div>
+
+</div>

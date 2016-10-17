@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.css' />
+		<script src="/angular/angular.js" defer></script>
+		<script src="/angular-ui-router/release/angular-ui-router.js" defer></script>
+		<script src="/angular-ui-bootstrap/dist/ui-bootstrap.js" defer></script>
+		<script src="/ui-bootstrap-tpls-0.14.3.js" defer></script> 
+		<script src="/debateApp.js" defer></script>
+		<script src="/question/QuestionFactory.js" defer></script>
+		<script src="/login/AuthService.js" defer></script>
+		<script src="/orderManager/OrderManagerFactory.js" defer></script>
+
+<!-- 		<style> .pagination a { cursor: pointer; }</style> -->
+	</head>
+	<body ng-app='debateApp'>
+
+		<nav class = 'navbar navbar-inverse'>
+			<div class = 'container-fluid'>
+				<ul class = 'nav navbar-nav'>
+					<li><a ui-sref='home'>Home</a></li>
+					<li><a ui-sref='questions'>Questions</a></li>
+					<li><a ui-sref='login'>Log in</a></li>
+					<li><a ui-sref='ordermanagement'>Order Management!</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<ui-view></ui-view>
+
+	</body>
+</html>

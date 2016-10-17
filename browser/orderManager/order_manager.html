@@ -1,0 +1,54 @@
+<div>
+	<input type="text" ng-model="search.$" placeholder="Search by anything"/></br>
+	<input type="text" ng-model="search.state" placeholder="Search by state"/></br>
+
+
+<!-- 	<form name='form' class='form-group'>
+		<label for='content'> Question content </label>
+		<input id='content' ng-model='newquestion.content' class='form-control'>
+		<label for='respondent'> This question is for </label>		
+		<input id='respondent' ng-model='newquestion.respondent' class='form-control'>
+		<button ng-click='save()' class='btn btn-danger'>submit this question!</button>
+	</form> -->
+    vv
+	<div ng-repeat='order in pageOrders | filter:search:strict' class = 'container well'>
+<!-- 		This is a question for <strong><a ui-sref='respondent({respondent:question.respondent})'>{{question.respondent}}</a></strong> : {{question.content}} -->
+
+		Order id: {{order.id}} </br>
+		User Email: {{order.user.email}} </br>
+		Order status: {{order.order_status}} </br>
+		Order placing time: {{order.createdAt}} </br>
+		total amount: ??
+		<div ng-repeat='item in order.order_items'  class = 'alert alert-danger'>
+		{{item.instrument.instrument_title}} with a quantity of {{item.quantity}} and a subtotal of {{item.sub_total}}
+		</div>
+		Shipping address: {{order.address}} </br>
+		Shipping city: {{order.city}} </br>
+		Shipping state: {{order.state}} </br>
+		Shipping country: {{order.country}} </br>
+
+		<a ui-sref='edit({orderid: order.id})'>Edit this order</a>
+		<button ng-click='delete(order.id)' class =' btn btn-success'> delete this order!</button>
+	</div>
+
+
+	<ul uib-pagination total-items="orders.length" ng-model="currentPage" max-size="maxSize" boundary-links="true" force-ellipses="true" items-per-page ="numPerPage"></ul>
+
+<!-- <ul class="pagination">
+	<li>
+		<a ng-click="pre()" arial-label="Previous">
+			<span arial-hidden="true">&laquo;</span>
+		</a>
+	</li>
+	<li ng-repeat="page in totalPages">
+		<a ng-click="changePage()">{{page}}</a>
+	</li>
+	<li>
+		<a href="#" arial-label="Next">
+			<span arial-hidden="true">&raquo;</span>
+		</a>
+	</li>
+
+</ul>
+ -->
+</div>
